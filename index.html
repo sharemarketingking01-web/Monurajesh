@@ -15,7 +15,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '944407148014992'); /* 🔴 CHANGE THIS */
+    fbq('init', '944407148014992');
     fbq('track', 'PageView');
   </script>
 
@@ -35,8 +35,34 @@
       animation: fadeIn 1.2s ease;
     }
 
+    /* 🔥 PROFILE IMAGE WITH GRADIENT RING */
+    .image-wrapper {
+      display: inline-block;
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ffd700, #ff6a00, #ffd700);
+      background-size: 200% 200%;
+      animation: gradientMove 3s ease infinite, glowPulse 2s infinite;
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ✅ VERIFIED BADGE */
+    .verified {
+      color: #1DA1F2;
+      font-size: 20px;
+      margin-left: 6px;
+    }
+
     h1 {
-      font-size: 32px;
+      font-size: 30px;
       margin-bottom: 8px;
     }
 
@@ -72,12 +98,6 @@
       box-shadow: 0 0 0 rgba(24,119,242,0.6);
     }
 
-    .trust {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-top: 25px;
-    }
-
     .urgency {
       margin-top: 18px;
       font-size: 15px;
@@ -85,16 +105,28 @@
       font-weight: bold;
     }
 
+    .trust {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-top: 25px;
+    }
+
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(24,119,242,0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 18px rgba(24,119,242,0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(24,119,242,0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(24,119,242,0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(24,119,242,0); }
+      100% { box-shadow: 0 0 0 0 rgba(24,119,242,0); }
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 10px #ffd700; }
+      50% { box-shadow: 0 0 25px #ff6a00; }
+      100% { box-shadow: 0 0 10px #ffd700; }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     @keyframes fadeIn {
@@ -114,8 +146,20 @@
 
   <div class="container">
 
-    <h1>Trade with Purab</h1>
-    <h2>India’s Best Channel for <span class="highlight">#Nifty #BankNifty #Stocks</span></h2>
+    <!-- 🔥 PROFILE IMAGE -->
+    <div class="image-wrapper">
+      <img src="profile.jpg" alt="Purab" class="profile-img">
+    </div>
+
+    <h1>
+      Trade with Purab
+      <span class="verified">✔</span>
+    </h1>
+
+    <h2>
+      India’s Best Channel for 
+      <span class="highlight">#Nifty #BankNifty #Stocks</span>
+    </h2>
 
     <p>
       📈 Recover Your Trading Losses <br>
@@ -123,7 +167,6 @@
       🇮🇳 Trusted by Thousands of Indian Traders
     </p>
 
-    <!-- 🔴 CHANGE TELEGRAM LINK HERE -->
     <a href="https://t.me/+oZJMZTJnW1AwNzU1"
        target="_blank"
        class="btn"
