@@ -243,13 +243,37 @@
     </p>
 
     <!-- ✏️ TELEGRAM_LINK -->
-    <a href="https://t.me/+gmTYLSrKmHAxY2Jk"
+    <a href="https://t.me/+jzZxuYE8L78zNDc1"
        target="_blank"
        rel="noopener"
        class="btn"
        onclick="fbq('track','Lead')">
       JOIN TELEGRAM
     </a>
+
+
+    <script>
+  function updateTelegramLink() {
+    const linkElement = document.getElementById('telegram-link');
+    const currentHour = new Date().getHours(); // Gets current hour (0-23)
+
+    // First Link (Default)
+    const defaultLink = "https://t.me/+jzZxuYE8L78zNDc1"; 
+    
+    // Second Link (Active between 6:00 PM and 6:59 PM)
+    const specialLink = "https://t.me/+jzZxuYE8L78zNDc1"; 
+
+    // 18 represents 6 PM
+    if (currentHour === 18) {
+      linkElement.href = specialLink;
+    } else {
+      linkElement.href = defaultLink;
+    }
+  }
+
+  // Run the function immediately when the page loads
+  updateTelegramLink();
+</script>
 
 
   </div>
